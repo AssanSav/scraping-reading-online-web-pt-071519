@@ -3,8 +3,10 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(open("https://flatironschool.com/"))
+html = open("https://flatironschool.com/")
 
-courses = doc.css(".title-3Kf9MY")[0].attributes
+doc = Nokogiri::HTML(html)
 
+doc.css(".headline-26OIBN").text.strip
 
+binding.pry
